@@ -15,7 +15,7 @@ int[,] FillArrayInSpiral(int[,] array, int number)
 {
     //int number = 1;
     int pos = 1;
-    int koef = number;
+    int coeff = number;
     // слева направо САМЫЙ ПЕРВЫЙ ПРОХОД:
     for (int i = 0; i < array.GetLength(1); i++)
     {
@@ -24,7 +24,7 @@ int[,] FillArrayInSpiral(int[,] array, int number)
     }   
 
 
-    while (number < array.Length + koef)
+    while (number < array.Length + coeff)
     {
         // сверху вниз:
         for (int j = pos; j <= array.GetLength(0) - pos ; j++)
@@ -32,7 +32,7 @@ int[,] FillArrayInSpiral(int[,] array, int number)
             array[j, array.GetLength(0) - pos] = number;
             number++;
         } 
-        if (number > array.Length + koef) break;
+        if (number > array.Length + coeff) break;
 
         // справа налево:   
         for (int j = array.GetLength(1) - 1 - pos; j >= pos - 1; j--)
@@ -40,7 +40,7 @@ int[,] FillArrayInSpiral(int[,] array, int number)
             array[array.GetLength(1) - pos, j] = number;
             number++;
         }
-        if (number > array.Length + koef) break;
+        if (number > array.Length + coeff) break;
         
         // снизу вверх:   
         for (int j = array.GetLength(0) - 1 - pos; j >= pos; j--)
@@ -48,7 +48,7 @@ int[,] FillArrayInSpiral(int[,] array, int number)
             array[j, pos - 1] = number;
             number++;
         }
-        if (number > array.Length + koef) break;
+        if (number > array.Length + coeff) break;
         
         // слева направо:   
         for (int j = pos; j <= array.GetLength(1) - 1 - pos; j++)
@@ -56,7 +56,7 @@ int[,] FillArrayInSpiral(int[,] array, int number)
             array[pos, j] = number;
             number++;
         }
-        if (number > array.Length + koef) break;
+        if (number > array.Length + coeff) break;
 
         pos++;
     }
