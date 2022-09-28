@@ -13,7 +13,6 @@
 
 int[,] FillArrayInSpiral(int[,] array, int number)
 {
-    //int number = 1;
     int pos = 1;
     int coeff = number;
     // слева направо САМЫЙ ПЕРВЫЙ ПРОХОД:
